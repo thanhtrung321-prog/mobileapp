@@ -25,7 +25,7 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/BuyAgainFoodImage"
                 android:layout_width="62dp"
                 android:layout_height="62dp"
                 android:src="@drawable/menu2"
@@ -34,7 +34,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/BuyAgainFoodName"
                 android:layout_width="122dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/imageView8"
+                app:layout_constraintStart_toEndOf="@id/BuyAgainFoodImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -54,35 +54,36 @@
                 android:fontFamily="@font/lato_regular"
                 android:text="Waroenk kita"
                 android:textColor="@color/grey_color"
-                app:layout_constraintEnd_toEndOf="@id/textView26"
-                app:layout_constraintStart_toStartOf="@id/textView26"
-                app:layout_constraintTop_toBottomOf="@id/textView26" />
+                app:layout_constraintEnd_toEndOf="@id/BuyAgainFoodName"
+                app:layout_constraintStart_toStartOf="@id/BuyAgainFoodName"
+                app:layout_constraintTop_toBottomOf="@id/BuyAgainFoodName" />
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/BuyAgainFoodPrice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="$35"
-                android:textSize="19sp"
                 android:textColor="@color/text_color"
+                android:textSize="19sp"
+                app:layout_constraintEnd_toEndOf="@id/textView27"
                 app:layout_constraintStart_toStartOf="@id/textView27"
-                app:layout_constraintTop_toBottomOf="@id/textView27"
-                app:layout_constraintEnd_toEndOf="@id/textView27"/>
+                app:layout_constraintTop_toBottomOf="@id/textView27" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BuyAgainFoodButton"
                 android:layout_width="126dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="36dp"
                 android:layout_marginTop="16dp"
-                android:text="Khôi phục"
                 android:background="@drawable/background_radient_button"
+                android:text="Mua Lại"
                 android:textColor="@color/white"
                 app:cardBackgroundColor="@color/green_color"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/textView26"
-                app:layout_constraintStart_toEndOf="@id/textView26"
-                app:layout_constraintTop_toTopOf="@id/textView26"
+                app:layout_constraintBottom_toBottomOf="@id/BuyAgainFoodName"
+                app:layout_constraintStart_toEndOf="@id/BuyAgainFoodName"
+                app:layout_constraintTop_toTopOf="@id/BuyAgainFoodName"
                 app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -40,7 +40,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/BuyAgainFoodImage"
                     android:layout_width="62dp"
                     android:layout_height="62dp"
                     android:layout_marginStart="8dp"
@@ -52,7 +52,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/BuyAgainFoodName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -60,7 +60,7 @@
                     android:fontFamily="@font/yeonsungregular"
                     android:text="Spacy fresh crab"
                     android:textSize="15dp"
-                    app:layout_constraintStart_toEndOf="@+id/imageView8"
+                    app:layout_constraintStart_toEndOf="@+id/BuyAgainFoodImage"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -71,10 +71,10 @@
                     android:text="Waroenk kita"
                     android:textColor="@color/grey_color"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView26"
+                    app:layout_constraintEnd_toEndOf="@+id/BuyAgainFoodName"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textView26"
-                    app:layout_constraintTop_toBottomOf="@+id/textView26"
+                    app:layout_constraintStart_toStartOf="@+id/BuyAgainFoodName"
+                    app:layout_constraintTop_toBottomOf="@+id/BuyAgainFoodName"
                     app:layout_constraintVertical_bias="0.145" />
 
                 <TextView
@@ -119,11 +119,16 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 <!-- thuộc tính tools giúp hiển thị nhiều item trên recylerView-->
         <androidx.recyclerview.widget.RecyclerView
-            tools:listitem="@layout/buy_again_item"
+            android:id="@+id/BuyAgainRecyview"
             android:layout_width="409dp"
-            android:layout_height="715dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="198dp" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="220dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:listitem="@layout/buy_again_item">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

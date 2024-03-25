@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/username"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/editemail"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:drawableLeft="@drawable/mail_login_register"
@@ -81,13 +81,13 @@
         android:ems="10"
         android:hint="Email or phone number"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="@+id/username"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextText"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/password"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:drawableLeft="@drawable/lock_login_register"
@@ -96,13 +96,13 @@
         android:ems="10"
         android:hint="Mật khẩu"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintEnd_toEndOf="@+id/editemail"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintStart_toStartOf="@+id/editemail"
+        app:layout_constraintTop_toBottomOf="@+id/editemail" />
 
     <EditText
-        android:id="@+id/editTextNumberPassword"
+        android:id="@+id/password_re"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:drawableLeft="@drawable/lock_login_register"
@@ -110,11 +110,11 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:hint="Nhập lại mật khẩu"
-        android:inputType="numberPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
         android:id="@+id/textView16"
@@ -122,10 +122,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Hoặc"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumberPassword"
+        app:layout_constraintEnd_toEndOf="@+id/password_re"
         app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+        app:layout_constraintStart_toStartOf="@+id/password_re"
+        app:layout_constraintTop_toBottomOf="@+id/password_re" />
 
     <TextView
         android:id="@+id/textView17"
@@ -150,7 +150,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="facebook"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword"
+        app:layout_constraintStart_toStartOf="@+id/password_re"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -169,14 +169,14 @@
         app:layout_constraintTop_toTopOf="@+id/button" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button6"
+        android:id="@+id/register_button"
         android:layout_width="157dp"
         android:layout_height="57dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/greenbuttongradient"
         android:text="Đăng ký"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumberPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword"
+        app:layout_constraintEnd_toEndOf="@+id/password_re"
+        app:layout_constraintStart_toStartOf="@+id/password_re"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <TextView
@@ -189,9 +189,9 @@
 
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="@+id/register_button"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/button6" />
+        app:layout_constraintStart_toStartOf="@+id/register_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

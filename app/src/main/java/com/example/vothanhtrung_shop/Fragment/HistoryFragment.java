@@ -1,66 +1,84 @@
 package com.example.vothanhtrung_shop.Fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.example.vothanhtrung_shop.R;
+import com.example.vothanhtrung_shop.adaptar.BuyAgainAdapter;
+import com.example.vothanhtrung_shop.databinding.FragmentHistoryBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HistoryFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class HistoryFragment extends Fragment {
+    private FragmentHistoryBinding binding;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private String[] buyAgainFoodName = {"Cháo yến Mạch", "Kem Trứng", "Hủ Tiếu","Salas","Món Ăn Thập Cẩm"};
+    private String[] buyAgainFoodPrice = {"$10", "$20", "$30","$50","$80"};
+    private int[] buyAgainFoodImage = {R.drawable.menu4, R.drawable.menu3, R.drawable.menu7,R.drawable.menu2,R.drawable.menu1};
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public HistoryFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HistoryFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HistoryFragment newInstance(String param1, String param2) {
-        HistoryFragment fragment = new HistoryFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false);
+        binding = FragmentHistoryBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Setup RecyclerView
+        setupRecyclerView();
+
+        // Log the arrays
+        logArrays();
+    }
+
+    private void setupRecyclerView() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        binding.BuyAgainRecyview.setLayoutManager(layoutManager);
+
+        // Convert arrays to ArrayLists
+        ArrayList<String> buyAgainFoodNameList = new ArrayList<>(Arrays.asList(buyAgainFoodName));
+        ArrayList<String> buyAgainFoodPriceList = new ArrayList<>(Arrays.asList(buyAgainFoodPrice));
+        ArrayList<Integer> buyAgainFoodImageList = new ArrayList<>();
+        for (int image : buyAgainFoodImage) {
+            buyAgainFoodImageList.add(image);
+        }
+
+        // Initialize adapter and set it to RecyclerView
+        BuyAgainAdapter adapter = new BuyAgainAdapter(buyAgainFoodNameList, buyAgainFoodPriceList, buyAgainFoodImageList);
+        binding.BuyAgainRecyview.setAdapter(adapter);
+    }
+
+    private void logArrays() {
+        // Log the arrays
+        StringBuilder sbFoodName = new StringBuilder("buyAgainFoodName: ");
+        StringBuilder sbFoodPrice = new StringBuilder("buyAgainFoodPrice: ");
+        StringBuilder sbFoodImage = new StringBuilder("buyAgainFoodImage: ");
+        for (String foodName : buyAgainFoodName) {
+            sbFoodName.append(foodName).append(", ");
+        }
+        for (String foodPrice : buyAgainFoodPrice) {
+            sbFoodPrice.append(foodPrice).append(", ");
+        }
+        for (int image : buyAgainFoodImage) {
+            sbFoodImage.append(image).append(", ");
+        }
+        // Remove the last comma and space
+        sbFoodName.delete(sbFoodName.length() - 2, sbFoodName.length());
+        sbFoodPrice.delete(sbFoodPrice.length() - 2, sbFoodPrice.length());
+        sbFoodImage.delete(sbFoodImage.length() - 2, sbFoodImage.length());
+
+
     }
 }
