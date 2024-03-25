@@ -98,15 +98,24 @@ public class SignActivity extends AppCompatActivity {
                             User user = new User(userName, email);
 
                             // Lưu thông tin người dùng vào Firebase Database với UID làm key
-                            database.child("users").child(userId).setValue(user);
+                            database.child("users").child(userId).setValue(user)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                // Hiển thị thông báo đăng ký thành công
+                                                showToast("Đăng ký tài khoản thành công");
 
-                            // Hiển thị thông báo đăng ký thành công
-                            showToast("Đăng ký tài khoản thành công");
-
-                            // Chuyển đến MainActivity
-                            Intent intent = new Intent(SignActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish(); // Đóng activity hiện tại
+                                                // Chuyển đến MainActivity
+                                                Intent intent = new Intent(SignActivity.this, MainActivity.class);
+                                                startActivity(intent);
+                                                finish(); // Đóng activity hiện tại
+                                            } else {
+                                                // Đăng ký thất bại, hiển thị thông báo lỗi
+                                                showToast("Đăng ký tài khoản thất bại: " + task.getException().getMessage());
+                                            }
+                                        }
+                                    });
                         } else {
                             // Đăng ký thất bại, hiển thị thông báo lỗi
                             showToast("Đăng ký tài khoản thất bại: " + task.getException().getMessage());
