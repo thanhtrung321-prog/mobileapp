@@ -65,7 +65,7 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:hint="Tên người dùng"
-        android:inputType="text"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/textView15"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/textView15"

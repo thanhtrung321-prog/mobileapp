@@ -39,6 +39,13 @@ public class PopularAddaptar extends RecyclerView.Adapter<PopularAddaptar.Popula
         return items.size();
     }
 
+    public void setOnItemClickListener(PopularAddaptar.OnItemClickListener test) {
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
     public static class PopularViewHolder extends RecyclerView.ViewHolder {
         private final PopulerItemBinding binding;
 
